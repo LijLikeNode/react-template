@@ -1,5 +1,5 @@
 import { observable, action, configure, reaction } from "mobx";
-import http from '../api';
+import ax from '../api';
 // configure({ enforceActions : true });
 class Home {
   @observable value = 'lalal';
@@ -20,7 +20,7 @@ class Home {
 
   @action.bound initList(){
     // console.log(get)
-    http.get('/list','',true).then(res=>{
+    ax('/list','',true).then(res=>{
       console.log(res);
     }).catch(e=>console.log(e))
   }
