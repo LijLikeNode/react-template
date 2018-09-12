@@ -1,51 +1,163 @@
-body,dl,dd,p,h1,h2,h3,h4,h5,h6{
-  margin:0;
+body,
+dl,
+dd,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
-h1,h2,h3,h4,h5,h6{
-  font-size:100%
-} 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%
+}
+
 /*继承body设定的字体大小*/
 /* 根据屏幕大小改变文字大小 */
-html{
-  font-size:3.2vw;
-} 
+html {
+  font-size: 3.2vw;
+}
+
 /*chorme下设置为10px无效,推荐设置为20px,1rem=20px*/
-@media screen and (max-width:768px){ /*手机屏幕*/
+@media screen and (max-width:768px) {
+  /*手机屏幕*/
   /* html{font-size: 15px;}  */
 }
-body{
+
+body {
   font-family: "Droid Sans Fallback",
-  "Heiti SC",
-  "Droid Sans",
-  Helvetica,
-  "Helvetica Neue",
-  sans-self; 
-  color:#555; 
-  background-color:#F7F7F7;
+    "Heiti SC",
+    "Droid Sans",
+    Helvetica,
+    "Helvetica Neue",
+    sans-self;
+  color: #555;
+  background-color: #F7F7F7;
 }
-.clearfix:after{
-  content:"."; display:block; visibility:hidden; height:0; clear:both;
-} 
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+
 /*除去浮动*/
-a:hover{
+a:hover {
   text-decoration: none;
 }
-ul,ol{
+
+ul,
+ol {
   list-style: none;
-  margin:0;
-  padding:0;
-} 
+  margin: 0;
+  padding: 0;
+}
+
 img {
   max-width: 100%;
   height: auto;
-} /* 图片自适应 */
-em,i{
+}
+
+/* 图片自适应 */
+em,
+i {
   font-style: normal
-} /*如需默认样式可修改*/
-button,input,select,textarea{
-  vertical-align:middle;
-  outline:none;
-} /*出去获得焦点下的蓝色边框*/
-input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+}
+
+/*如需默认样式可修改*/
+button,
+input,
+select,
+textarea {
+  vertical-align: middle;
+  outline: none;
+}
+
+/*出去获得焦点下的蓝色边框*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #ccc;
-} /*修改placeholder文字颜色*/
+}
+
+/*修改placeholder文字颜色*/
+
+
+
+/* ajax loading */
+
+.popalert {
+  background: rgba(0, 0, 0, .8);
+  text-align: center;
+  width: 14em;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 2.5em 1em;
+  z-index: 1000;
+  border-radius: .2em;
+  display: none;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.popalert.show {
+  display: block;
+}
+
+.popalert.show.notouch {
+  pointer-events: none;
+}
+
+.popalert.fadein {
+  opacity: 1;
+}
+
+.wait {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.wait.show {
+  display: block;
+}
+
+.wait.show {
+  opacity: 1;
+}
+
+.wait figure {
+  position: absolute;
+  background: rgba(0, 0, 0, .5);
+  width: 10em;
+  height: 8em;
+  text-align: center;
+  line-height: 8em;
+  left: 50%;
+  top: 50%;
+  margin: -5em 0 0 -5em;
+  border-radius: .2em;
+}
+
+.wait figure img {
+  width: 2.5em;
+  /* animation:wait 8s linear infinite; */
+}

@@ -1,4 +1,5 @@
 import { observable, action, configure, reaction } from "mobx";
+import http from '../api';
 // configure({ enforceActions : true });
 class Home {
   @observable value = 'lalal';
@@ -15,6 +16,13 @@ class Home {
 
   @action.bound deleteItem(item){
     this.list.remove(item);
+  }
+
+  @action.bound initList(){
+    // console.log(get)
+    http.get('/list','',true).then(res=>{
+      console.log(res);
+    }).catch(e=>console.log(e))
   }
   
   constructor(){
